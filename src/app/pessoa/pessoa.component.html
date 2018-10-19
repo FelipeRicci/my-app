@@ -1,0 +1,37 @@
+<p>
+  Pessoas works!
+</p>
+
+<fieldset>  
+  <legend>Pessoa</legend>
+    Nome: <input [(ngModel)]="pessoa.nome" /><br>
+    Sobrenome: <input [(ngModel)]="pessoa.sobrenome" /><br>
+    Sexo: <select [(ngModel)]="pessoa.sexo">
+            <option *ngFor="let s of sexos">{{s}}</option>
+          </select>
+    
+      <button (click)="salvar()">Salvar</button>
+</fieldset>
+    
+
+
+<table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Sobrenome</th>
+          <th>Sexo</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      
+      <tbody>
+        <tr *ngFor="let i of pessoas">
+          <td>{{i.nome}}</td>
+          <td>{{i.sobrenome}}</td>
+          <td>{{i.sexo}}</td>
+          <td><button (click)="editar(i)">Editar</button></td>
+          <td><button (click)="excluir(i.id)">Excluir</button></td>
+        </tr>
+      </tbody>
+    </table>

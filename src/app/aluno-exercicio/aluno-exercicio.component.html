@@ -1,0 +1,34 @@
+<p>
+  aluno-exercicio works!
+</p>
+
+<fieldset>  
+  <legend>Pessoa</legend>
+    Nome: <input [(ngModel)]="nome" /><br>
+    Sobrenome: <input [(ngModel)]="sobrenome" /><br>
+    Sexo: <optgroup>
+          <option *ngFor="let s of sexo">{{s}}</option>
+    </optgroup>
+      <button (click)="salvar()">Salvar</button>
+</fieldset>
+    
+
+
+<table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Sobrenome</th>
+          <th>Sexo</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      
+      <tbody>
+        <tr *ngFor="let i of alunos">
+          <td>{{i.nome}}</td>
+          <td>{{i.sobrenome}}</td>
+          <td>{{i.sexo}}</td>
+        </tr>
+      </tbody>
+    </table>
